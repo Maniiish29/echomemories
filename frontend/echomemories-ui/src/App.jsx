@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="min-h-screen bg-background">
+      <header className="py-6 border-b">
+        <div className="container-memory">
+          <h1 className="text-3xl font-bold text-gradient">
+            EchoMemories
+          </h1>
+        </div>
+      </header>
+
+      <main className="container-memory py-24 text-center">
+        <h2 className="text-5xl font-bold mb-6">
+          A gentle place to hold memories
+        </h2>
+
+        <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
+          EchoMemories helps you capture, revisit, and cherish meaningful
+          moments with clarity and calm.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+        <div className="mt-10">
+          <button className="btn-primary">
+            Start a Memory
+          </button>
+        </div>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
