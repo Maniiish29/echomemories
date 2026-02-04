@@ -1,5 +1,15 @@
-import Index from "./pages/Index";
+import Header from "./components/layout/Header";
 
-export default function App() {
-  return <Index />;
+function App() {
+  return (
+    <>
+      <Header />
+      <main className="pt-8">
+        {/* Your content */}
+      </main>
+    </>
+  );
 }
+
+export default App;
+
