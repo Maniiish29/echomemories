@@ -1,15 +1,15 @@
 import Header from "./components/layout/Header";
+import Hero from "./components/hero/Hero";
+import FeaturesGrid from "./components/features/FeaturesGrid";
 
 function App() {
   return (
     <>
       <Header />
-      <main className="pt-8">
-        {/* Your content */}
-      </main>
+      <Hero />
+      <FeaturesGrid />
     </>
   );
 }
 
 export default App;
-
