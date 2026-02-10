@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
-
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,21 +12,35 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
 
           {/* Logo */}
-          <div className="text-xl font-bold text-slate-900 dark:text-white">
+          <Link
+            to="/"
+            className="text-xl font-bold text-slate-900 dark:text-white"
+          >
             Echo<span className="text-indigo-500">Memories</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {["Home", "Explore", "About"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
-              >
-                {item}
-              </a>
-            ))}
+            <Link
+              to="/"
+              className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            >
+              Home
+            </Link>
+
+            <Link
+              to="/memories"
+              className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            >
+              Explore
+            </Link>
+
+            <Link
+              to="/caregiver"
+              className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            >
+              Caregiver
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -42,9 +56,12 @@ const Header = () => {
             </button>
 
             {/* CTA */}
-            <button className="hidden sm:inline-flex rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition">
+            <Link
+              to="/memories"
+              className="hidden sm:inline-flex rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition"
+            >
               Get Started
-            </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -72,20 +89,39 @@ const Header = () => {
       {menuOpen && (
         <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
           <nav className="flex flex-col gap-4 px-4 py-6">
-            {["Home", "Explore", "About"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
 
-            <button className="mt-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition">
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            >
+              Home
+            </Link>
+
+            <Link
+              to="/memories"
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            >
+              Explore
+            </Link>
+
+            <Link
+              to="/caregiver"
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
+            >
+              Caregiver
+            </Link>
+
+            <Link
+              to="/memories"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition text-center"
+            >
               Get Started
-            </button>
+            </Link>
+
           </nav>
         </div>
       )}

@@ -1,13 +1,22 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
-import Hero from "./components/hero/Hero";
-import FeaturesGrid from "./components/features/FeaturesGrid";
+import Footer from "./components/layout/Footer";
+import Home from "./pages/Home";
+import Memories from "./pages/Memories";
+import Caregiver from "./pages/Caregiver";
 
 function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <FeaturesGrid />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/memories" element={<Memories />} />
+        <Route path="/caregiver" element={<Caregiver />} />
+      </Routes>
+
+      <Footer />
     </>
   );
 }
