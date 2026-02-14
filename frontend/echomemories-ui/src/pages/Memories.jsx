@@ -32,36 +32,20 @@ const MOCK_MEMORIES = [
 
 const Memories = () => {
   return (
-    <div className="bg-slate-50 dark:bg-slate-900 min-h-screen py-16">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-6">
 
-        {/* Page Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
-          <div>
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-              Your Memories
-            </h1>
-
-            {/* Memory Count */}
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-              {MOCK_MEMORIES.length} memories saved
-            </p>
-
-            <p className="mt-3 text-slate-600 dark:text-slate-400">
-              A collection of cherished moments and meaningful stories.
-            </p>
-          </div>
-
-          <button className="rounded-lg bg-indigo-600 px-5 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition">
-            + Add Memory
-          </button>
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
+            Your Memories
+          </h1>
         </div>
 
-        {/* Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {MOCK_MEMORIES.map((memory) => (
             <MemoryCard
               key={memory.id}
+              id={memory.id}
               title={memory.title}
               date={memory.date}
               description={memory.description}
